@@ -5,6 +5,13 @@ Commaned  -
 
 Scaffold-DbContext "Server=LAPTOP-O0QQ0V87;Database=DotNetCore;User Id=sa;Password=sqlserver2008;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
+1. Using Windows Authentication (Trusted_Connection=True)
+Scaffold-DbContext "Server=LAPTOP-O0QQ0V87;Database=TestDb;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+2. Using SQL Server Authentication (User Id, Password, TrustServerCertificate=True)
+Scaffold-DbContext "Server=LAPTOP-O0QQ0V87;Database=DotNetCore;User Id=sa;Password=sqlserver2008;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+
+
 
 3 Line have  to add into middleware 
 
