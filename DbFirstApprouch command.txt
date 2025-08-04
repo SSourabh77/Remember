@@ -10,7 +10,9 @@ Scaffold-DbContext "Server=LAPTOP-O0QQ0V87;Database=TestDb;Trusted_Connection=Tr
 2. Using SQL Server Authentication (User Id, Password, TrustServerCertificate=True)
 Scaffold-DbContext "Server=LAPTOP-O0QQ0V87;Database=DotNetCore;User Id=sa;Password=sqlserver2008;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
+---for both 
 
+Scaffold-DbContext "Server=LAPTOP-O0QQ0V87;Database=TestDb;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
 
 3 Line have  to add into middleware 
@@ -18,3 +20,4 @@ Scaffold-DbContext "Server=LAPTOP-O0QQ0V87;Database=DotNetCore;User Id=sa;Passwo
 var Provider = builder.Services.BuildServiceProvider();
 var Config = Provider.GetRequiredService<IConfiguration>();
 builder.Services.AddDbContext<WaProdContext>(item => item.UseSqlServer(Config.GetConnectionString("dbcs")));
+
