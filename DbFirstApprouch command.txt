@@ -21,3 +21,27 @@ var Provider = builder.Services.BuildServiceProvider();
 var Config = Provider.GetRequiredService<IConfiguration>();
 builder.Services.AddDbContext<WaProdContext>(item => item.UseSqlServer(Config.GetConnectionString("dbcs")));
 
+
+---check box validater 
+---java script
+<script>
+    document.querySelectorAll(".batch-checkbox").forEach(cb => {
+        cb.addEventListener("change", function () {
+            if (this.checked) {
+                document.querySelectorAll(".batch-checkbox").forEach(other => {
+                    if (other !== this) other.checked = false;
+                });
+            }
+        });
+    });
+</script>
+
+-- jquery
+
+<script>
+    $(".batch-checkbox").on("change", function () {
+        $(".batch-checkbox").not(this).prop("checked", false);
+    });
+</script>
+
+
